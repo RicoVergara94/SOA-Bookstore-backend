@@ -1,8 +1,21 @@
 package com.SOA.demo.user;
 
+import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
+@Entity
+@Table
 public class User {
+    @Id
+    @SequenceGenerator(
+            name = "user_sequence",
+            sequenceName = "user_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "user_sequence"
+    )
     private long id;
     private String name;
     private String email;
