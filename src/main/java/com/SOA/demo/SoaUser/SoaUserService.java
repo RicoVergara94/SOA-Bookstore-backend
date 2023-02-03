@@ -15,10 +15,6 @@ public class SoaUserService {
     }
 
     public List<SoaUser> getSoaUsers() {
-        return List.of(new SoaUser(),
-                new SoaUser("Oscar Vergara",
-                        "Oscar.vergara1994@gmail.com"
-                )
-        );
+        return soaUserRepository.findAll();
     }
 }
