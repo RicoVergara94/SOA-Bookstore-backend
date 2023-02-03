@@ -1,36 +1,35 @@
-package com.SOA.demo.user;
+package com.SOA.demo.SoaUser;
 
 import jakarta.persistence.*;
-import org.springframework.stereotype.Component;
 
 @Entity
 @Table
-public class Userr {
+public class SoaUser {
     @Id
     @SequenceGenerator(
-            name = "userr_sequence",
-            sequenceName = "userr_sequence",
+            name = "SoaUser_sequence",
+            sequenceName = "SoaUser_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "userr_sequence"
+            generator = "SoaUser_sequence"
     )
     private long id;
     private String name;
     private String email;
 
-    public Userr() {
+    public SoaUser() {
     }
 
-    public Userr(String name, String email) {
+    public SoaUser(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
 
 
-    public Userr(long id, String name, String email) {
+    public SoaUser(long id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;

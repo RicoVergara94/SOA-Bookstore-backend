@@ -1,4 +1,4 @@
-package com.SOA.demo.user;
+package com.SOA.demo.SoaUser;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,16 +9,16 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path="api/v1/user")
-public class UserrController {
-    private final UserrService userrService;
+public class SoaUserController {
+    private final SoaUserService SoaUserService;
 
     @Autowired
-    public UserrController(UserrService userrService) {
-        this.userrService = userrService;
+    public SoaUserController(SoaUserService SoaUserService) {
+        this.SoaUserService = SoaUserService;
     }
 
     @GetMapping("/")
-    public List<Userr> getUserrs() {
-        return this.userrService.getUserrs();
+    public List<SoaUser> getSoaUsers() {
+        return this.SoaUserService.getSoaUsers();
     }
 }
