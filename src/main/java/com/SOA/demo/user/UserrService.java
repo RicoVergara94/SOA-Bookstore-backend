@@ -4,11 +4,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class UserService {
+public class UserrService {
 
-    public List<User> getUsers() {
-        return List.of(new User(),
-                new User("Oscar Vergara",
+    public List<Userr> getUserrs() {
+        return List.of(new Userr(),
+                new Userr("Oscar Vergara",
                         "Oscar.vergara1994@gmail.com"
                 )
         );

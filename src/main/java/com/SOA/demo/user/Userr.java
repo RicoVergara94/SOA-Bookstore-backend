@@ -5,32 +5,32 @@ import org.springframework.stereotype.Component;
 
 @Entity
 @Table
-public class User {
+public class Userr {
     @Id
     @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
+            name = "userr_sequence",
+            sequenceName = "userr_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
+            generator = "userr_sequence"
     )
     private long id;
     private String name;
     private String email;
 
-    public User() {
+    public Userr() {
     }
 
-    public User(String name, String email) {
+    public Userr(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
 
 
-    public User(long id, String name, String email) {
+    public Userr(long id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
