@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class SoaUserService {
 
@@ -16,5 +18,13 @@ public class SoaUserService {
 
     public List<SoaUser> getSoaUsers() {
         return soaUserRepository.findAll();
+    }
+    public void addNewSoaUser(SoaUser soaUser) {
+        Optional<SoaUser> soaUserOptional = soaUserRepository
+                .findSoaUserByEmail(soaUser.getEmail());
+        if(soaUserOptional.isPresent()) {
+            throw new IllegalStateException("email taken");
+        }
+        soaUserRepository.save(soaUser);
     }
 }

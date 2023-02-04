@@ -16,24 +16,21 @@ public class SoaUser {
             generator = "SoaUser_sequence"
     )
     private long id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
+    private String password;
 
     public SoaUser() {
     }
-
-    public SoaUser(String name, String email) {
-        this.name = name;
-        this.email = email;
-    }
-
-
-
-    public SoaUser(long id, String name, String email) {
+    public SoaUser(String firstName, String lastName, String email, String password) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
+        this.password = password;
     }
+
 
     public long getId() {
         return id;
@@ -43,12 +40,20 @@ public class SoaUser {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -59,12 +64,23 @@ public class SoaUser {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+
     @Override
     public String toString() {
-        return "User{" +
+        return "SoaUser{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

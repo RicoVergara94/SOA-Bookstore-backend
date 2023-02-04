@@ -11,12 +11,18 @@ public class SoaUserConfig {
     @Bean
     CommandLineRunner commandLineRunner(SoaUserRepository repository) {
         return args -> {
-                   SoaUser Oscar = new SoaUser("Oscar Vergara",
-                            "Oscar.vergara1994@gmail.com"
+                   SoaUser Oscar = new SoaUser(
+                           "Oscar",
+                           "Vergara",
+                           "Oscar.vergara1994@gmail.com",
+                           "password1"
                     );
 
-                   SoaUser Alex = new SoaUser("Alex Rodriguez",
-                    "Alex.Rod@gmail.com"
+                   SoaUser Alex = new SoaUser(
+                            "Alex",
+                            "Rodriguez",
+                            "Alex.Rod@gmail.com",
+                            "password2"
                     );
 
                    repository.saveAll(

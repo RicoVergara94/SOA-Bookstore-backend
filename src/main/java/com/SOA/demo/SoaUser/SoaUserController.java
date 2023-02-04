@@ -1,24 +1,27 @@
 package com.SOA.demo.SoaUser;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping(path="api/v1/user")
+@RequestMapping(path="api/v1/soa-user")
 public class SoaUserController {
-    private final SoaUserService SoaUserService;
+    private final SoaUserService soaUserService;
 
     @Autowired
     public SoaUserController(SoaUserService SoaUserService) {
-        this.SoaUserService = SoaUserService;
+        this.soaUserService = SoaUserService;
     }
 
     @GetMapping("/")
     public List<SoaUser> getSoaUsers() {
-        return this.SoaUserService.getSoaUsers();
+        return this.soaUserService.getSoaUsers();
+    }
+
+    @PostMapping("/")
+    public void registerNewSoaUser(@RequestBody SoaUser soaUser) {
+        soaUserService.addNewSoaUser(soaUser);
     }
 }
